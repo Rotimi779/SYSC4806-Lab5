@@ -1,4 +1,10 @@
 package org.example;
 
-public class BuddyInfoRepository {
-}
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+
+@RepositoryRestResource(path="buddies")
+public interface BuddyInfoRepository
+    extends CrudRepository<BuddyInfo,Integer>{
+    }
+

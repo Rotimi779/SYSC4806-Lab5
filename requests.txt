@@ -1,5 +1,4 @@
-### Create Buddy
-
+Create Buddy:
 POST http://localhost:8080/buddies
 Content-Type: application/json
 
@@ -8,3 +7,33 @@ Content-Type: application/json
   "address": "Revalie",
   "phoneNumber": 101253689
 }
+
+
+Get All Buddies:
+GET http://localhost:8080/buddies
+
+
+Create AddressBook:
+POST http://localhost:8080/addressbooks
+Content-Type: application/json
+
+{}
+
+
+Get All AddressBooks:
+GET http://localhost:8080/addressbooks
+
+
+Add Buddy to AddressBook 1:
+POST http://localhost:8080/addressbooks/1/buddies
+Content-Type: text/uri-list
+
+http://localhost:8080/buddies/101253689
+
+
+Get Buddies in AddressBook 1:
+GET http://localhost:8080/addressbooks/1/buddies
+
+
+View AddressBook 1 with Thymeleaf:
+GET http://localhost:8080/view/addressbooks/1
