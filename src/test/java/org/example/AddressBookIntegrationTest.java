@@ -24,12 +24,13 @@ public class AddressBookIntegrationTest {
     }
 
     @Test
-    void createBuddyReturnsCreated(){
+    void createBuddyReturnsCreated() {
         String buddyJson = """
                 {
                     "name": "Rotimi",
                     "address": "Revalie",
-                    "phoneNumber": 101253689
+                    "phoneNumber": 101253689,
+                    "email": "rotimi@gmail.com"
                 }
                 """;
 
@@ -39,6 +40,13 @@ public class AddressBookIntegrationTest {
                 .body(buddyJson)
                 .exchange()
                 .expectStatus().isCreated();
+
+        client.get()
+                .uri("/buddies/101253689")
+                .exchange()
+                .expectStatus().isOk()
+                .expectBody()
+                .jsonPath("$.email").isEqualTo("rotimi@gmail.com");
     }
 
     @Test

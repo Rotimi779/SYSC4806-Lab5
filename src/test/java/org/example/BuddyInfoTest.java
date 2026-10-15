@@ -23,4 +23,10 @@ class BuddyInfoTest {
         BuddyInfo random = new BuddyInfo("Rotimi","Revalie",101253689);
         assertEquals(101253689, random.getPhoneNumber());
     }
+
+    @Test
+    void testEmail(){
+        BuddyInfo buddy = new BuddyInfo("Rotimi","Revalie",101253689, "rotimi@gmail.com");
+        assertEquals("rotimi@gmail.com", buddy.getEmail());
+    }
 }

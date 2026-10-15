@@ -7,6 +7,7 @@ import jakarta.persistence.Id;
 public class BuddyInfo {
     private String name;
     private String address;
+    private String email;
     @Id
     private int phoneNumber;
 
@@ -34,6 +35,14 @@ public class BuddyInfo {
         this.phoneNumber = phoneNumber;
     }
 
+    public BuddyInfo(String name, String address, int phoneNumber, String email) {
+        this.name = name;
+        this.address = address;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+    }
+
+
     public String getName() {
         return name;
     }
@@ -44,6 +53,14 @@ public class BuddyInfo {
 
     public int getPhoneNumber() {
         return phoneNumber;
+    }
+
+    public String getEmail(){
+        return this.email;
+    }
+
+    public void setEmail(String email){
+        this.email = email;
     }
 
     public String toString(){
