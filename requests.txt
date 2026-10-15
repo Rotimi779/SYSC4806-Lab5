@@ -1,0 +1,10 @@
+### Create Buddy
+
+POST http://localhost:8080/buddies
+Content-Type: application/json
+
+{
+  "name": "Rotimi",
+  "address": "Revalie",
+  "phoneNumber": 101253689
+}
